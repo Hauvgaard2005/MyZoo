@@ -42,19 +42,20 @@ namespace Lesson_6{
 
         abstract class FriendlyAnimal{
             + AnimalPen Pen
-            + void OnMouseDown()
+            + void Pet()
         }
 
         abstract class HostileAnimal{
-
+            + AnimalPen Pen
+            + void Attack()
         }
 
         interface IFriendlyAnimal{
-            + void OnMouseDown()
+            + void HealInterface()
         }
 
         interface IHostileAnimal{
-
+            + void Chase()
         }
 
         class Cat{
@@ -62,7 +63,7 @@ namespace Lesson_6{
             + void OnMouseDown()
         }
 
-        class Pig{
+        class Cow{
             # void Update()
             - IEnumerator LerpMovement(Vector3 to)
         }
@@ -77,7 +78,7 @@ namespace Lesson_6{
         HostileAnimal -up-|> IHostileAnimal
         Wolf -up-|> HostileAnimal
         Cat -up-|> FriendlyAnimal
-        Pig -up-|> FriendlyAnimal
+        Cow -up-|> FriendlyAnimal
         Animal *-- AnimalState : State
     }
 
